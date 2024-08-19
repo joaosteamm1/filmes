@@ -1,0 +1,53 @@
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  textFont('Chakra Petch');
+  textSize(40);
+  textAlign(CENTER);
+  fill(255);
+  noStroke();
+}
+
+function draw() {
+  background(0);
+  
+  // Header
+  textSize(60);
+  text('JoaoFLIX', width / 2, 100);
+  
+  // Section Title
+  textSize(40);
+  text('Deadpool & Wolverine', width / 2, 200);
+  textSize(20);
+  text('#deadpool-wolverine', width / 2, 240);
+
+  // Videos section
+  let videoX = width / 2 - 280;
+  let videoY = 280;
+  let videoWidth = 560;
+  let videoHeight = 315;
+
+  // Draw a rectangle as placeholder for the video
+  fill(255, 0, 0);
+  rect(videoX, videoY, videoWidth, videoHeight);
+
+  // Section: Filmes e Séries
+  textSize(30);
+  text('Filmes e séries', width / 2, 650);
+
+  // Miniature Images
+  let thumbnailSize = 200;
+  let spacing = 20;
+  let thumbnails = 5;
+
+  for (let i = 0; i < thumbnails; i++) {
+    let x = (width - (thumbnails * (thumbnailSize + spacing) - spacing)) / 2 + i * (thumbnailSize + spacing);
+    let y = 700;
+
+    fill(100);
+    rect(x, y, thumbnailSize, thumbnailSize * 9 / 16); // Aspect ratio 16:9 for thumbnails
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
